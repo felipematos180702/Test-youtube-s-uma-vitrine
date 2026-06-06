@@ -58,22 +58,22 @@ export default function App() {
       <LiveSalesNotifications />
 
       {/* Hero Header Area */}
-      <header className="pt-10 pb-6 px-4 text-center max-w-5xl mx-auto">
+      <header className="pt-5 pb-3 md:pt-10 md:pb-6 px-4 text-center max-w-5xl mx-auto">
         {/* Urgent Warning Tag line */}
-        <div className="inline-flex items-center gap-1.5 bg-brand-red/15 border border-brand-red/30 px-4 py-2 rounded-full mb-6">
-          <Flame className="w-4 h-4 text-brand-red animate-pulse" />
-          <span className="text-[11px] md:text-xs font-display font-extrabold uppercase tracking-widest text-[#FF3E6C]">
+        <div className="inline-flex items-center gap-1 bg-brand-red/15 border border-brand-red/30 px-2 py-0.5 md:px-4 md:py-2 rounded-full mb-2 md:mb-6">
+          <Flame className="w-3 h-3 md:w-4 md:h-4 text-brand-red animate-pulse" />
+          <span className="text-[9px] md:text-xs font-display font-extrabold uppercase tracking-widest text-[#FF3E6C]">
             ⚠️ Oferta Especial de Lançamento Expirando Hoje
           </span>
         </div>
 
         {/* Big Crimson Display Headline (Copy Base) */}
-        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black font-display tracking-tight leading-[1.1] max-w-4xl mx-auto text-white">
+        <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-black font-display tracking-tight leading-[1.15] md:leading-[1.1] max-w-4xl mx-auto text-white">
           Visualização <span className="text-brand-red underline decoration-brand-red/30 underline-offset-4">Não Traz Dinheiro</span>: Transforme Suas Redes em Vendas Automáticas
         </h1>
 
         {/* Subtitle Supporting Info */}
-        <p className="text-zinc-400 mt-6 text-sm sm:text-base md:text-lg max-w-2xl mx-auto font-light leading-relaxed">
+        <p className="text-zinc-400 mt-3 md:mt-6 text-xs sm:text-sm md:text-base lg:text-lg max-w-2xl mx-auto font-light leading-relaxed">
           Esqueça as migalhas de views do Instagram ou YouTube. Descubra como vender como afiliado, <strong className="text-zinc-200">sem estoque e sem custos iniciais</strong>, transformando seu conteúdo em uma vitrine magnética para atrair compradores qualificados.
         </p>
       </header>
@@ -107,17 +107,7 @@ export default function App() {
         </div>
       </div>
 
-      {/* Trust Badges Bar */}
-      <div className="mx-auto max-w-5xl mt-12 mb-16 bg-zinc-950/60 border-y border-white/5 py-4 px-3 flex flex-wrap justify-around items-center gap-4">
-        <img src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?auto=format&fit=crop&w=150&h=30&q=80" alt="Hotmart Approved Setup" className="h-6 opacity-30 grayscale hover:opacity-100 transition duration-300" />
-        <span className="text-zinc-800 text-lg hidden md:inline">|</span>
-        <div className="flex items-center gap-2 text-zinc-400">
-          <CircleDollarSign className="w-5 h-5 text-brand-green" />
-          <span className="text-xs font-mono tracking-wider font-semibold">CHECKOUT INTEGRADO DE ALTA VELOCIDADE</span>
-        </div>
-        <span className="text-zinc-800 text-lg hidden md:inline">|</span>
-        <img src="https://images.unsplash.com/photo-1563013544-824ae1d704d3?auto=format&fit=crop&w=150&h=30&q=80" alt="Norton Secure Seal" className="h-6 opacity-30 grayscale hover:opacity-100 transition duration-300" />
-      </div>
+
 
       {/* The 5 Pillars Bento Section */}
       <PillarsSection />
