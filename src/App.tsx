@@ -87,12 +87,12 @@ export default function App() {
           onClick={initiatePurchase}
           whileHover={{ scale: 1.03 }}
           whileTap={{ scale: 0.98 }}
-          className="w-full bg-gradient-to-r from-brand-green to-emerald-500 hover:from-emerald-400 hover:to-brand-green text-black font-extrabold font-display text-base md:text-xl py-5 px-6 rounded-2xl shadow-[0_15px_30px_rgba(16,185,129,0.3)] hover:shadow-[0_20px_40px_rgba(16,185,129,0.55)] transition duration-300 uppercase tracking-wide flex items-center justify-center gap-3 group relative overflow-hidden"
+          className="w-full bg-gradient-to-r from-brand-green to-emerald-500 hover:from-emerald-400 hover:to-brand-green text-black font-extrabold font-display text-xs sm:text-sm md:text-xl py-3.5 px-4 md:py-5 md:px-6 rounded-xl md:rounded-2xl shadow-[0_15px_30px_rgba(16,185,129,0.3)] hover:shadow-[0_20px_40px_rgba(16,185,129,0.55)] transition duration-300 uppercase tracking-wide flex items-center justify-center gap-2 md:gap-3 group relative overflow-hidden"
         >
           {/* Flame element */}
           <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/10 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
           QUERO TRANSFORMAR MINHAS REDES SOCIAIS EM UMA VITRINE LUCRATIVA
-          <ChevronRight className="w-6 h-6 shrink-0 group-hover:translate-x-1.5 transition-transform" />
+          <ChevronRight className="w-5 h-5 md:w-6 md:h-6 shrink-0 group-hover:translate-x-1.5 transition-transform" />
         </motion.button>
         
         {/* Secure Checkout Labels */}
@@ -173,9 +173,9 @@ export default function App() {
               onClick={initiatePurchase}
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.98 }}
-              className="w-full bg-gradient-to-r from-brand-green to-emerald-500 hover:from-emerald-400 hover:to-brand-green text-black py-5 px-6 rounded-2xl shadow-[0_15px_30px_rgba(16,185,129,0.3)] hover:shadow-[0_20px_40px_rgba(16,185,129,0.55)] font-black text-base md:text-lg tracking-wide uppercase font-display select-none cursor-pointer flex items-center justify-center gap-2"
+              className="w-full bg-gradient-to-r from-brand-green to-emerald-500 hover:from-emerald-400 hover:to-brand-green text-black py-3.5 px-4 md:py-5 md:px-6 rounded-xl md:rounded-2xl shadow-[0_15px_30px_rgba(16,185,129,0.3)] hover:shadow-[0_20px_40px_rgba(16,185,129,0.55)] font-black text-xs sm:text-sm md:text-lg tracking-wide uppercase font-display select-none cursor-pointer flex items-center justify-center gap-1.5 md:gap-2"
             >
-              <Flame className="w-5 h-5 shrink-0 fill-black/20 animate-pulse" />
+              <Flame className="w-4 h-4 md:w-5 md:h-5 shrink-0 fill-black/20 animate-pulse" />
               QUERO ADQUIRIR O MÉTODO COM DESCONTO AGORA
             </motion.button>
           </div>
