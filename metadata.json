@@ -1,0 +1,6 @@
+{
+  "name": "Página de Vendas de Alta Conversão",
+  "description": "Uma Landing Page ultra-premium com VSL e funil de alta conversão para transformação de redes sociais em vitrines de vendas.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
