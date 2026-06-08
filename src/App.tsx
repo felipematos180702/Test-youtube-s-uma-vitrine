@@ -70,7 +70,7 @@ export default function App() {
         {/* Big Crimson Display Headline (Copy Base) */}
         <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-black font-display tracking-tight leading-[1.15] md:leading-[1.1] max-w-4xl mx-auto text-white uppercase">
           Visualização <span className="text-brand-red underline decoration-brand-red/30 underline-offset-4">Não Dá Dinheiro</span>: Vendas sim!
-          <span className="text-lg sm:text-xl md:text-[34px] block mt-3 md:mt-4 text-zinc-100 font-extrabold font-display uppercase">
+          <span className="text-[16px] sm:text-xl md:text-[34px] block mt-3 md:mt-4 text-zinc-100 font-extrabold font-display uppercase">
             Sua Rede Social é uma <span className="text-brand-green">PODEROSA</span> Vitrine de Vendas!
           </span>
           <span className="text-base sm:text-lg md:text-[25px] block mt-2 text-white font-bold tracking-normal uppercase">

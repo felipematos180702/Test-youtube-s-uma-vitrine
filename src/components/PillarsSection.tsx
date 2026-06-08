@@ -39,7 +39,7 @@ export default function PillarsSection() {
         </div>
 
         {/* Pillars Bento Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6">
           {benefitPillars.map((pillar, index) => {
             return (
               <motion.div
@@ -49,29 +49,29 @@ export default function PillarsSection() {
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 whileHover={{ scale: 1.03, y: -4 }}
-                className="group p-6 lg:p-8 rounded-2xl bg-zinc-50 border border-zinc-200 hover:border-brand-red/30 shadow-sm hover:shadow-[0_15px_30px_rgba(255,0,60,0.06)] transition-all duration-300 flex flex-col justify-between"
+                className="group p-3 sm:p-6 lg:p-8 rounded-2xl bg-zinc-50 border border-zinc-200 hover:border-brand-red/30 shadow-sm hover:shadow-[0_15px_30px_rgba(255,0,60,0.06)] transition-all duration-300 flex flex-col justify-between"
               >
                 <div>
-                  <div className="mb-5 flex items-center justify-between">
-                    <div className="p-3.5 bg-brand-red/10 rounded-xl border border-brand-red/20 inline-block group-hover:bg-brand-red/20 transition-all">
+                  <div className="mb-4 sm:mb-5 flex items-center justify-between">
+                    <div className="p-2 sm:p-3.5 bg-brand-red/10 rounded-xl border border-brand-red/20 inline-block group-hover:bg-brand-red/20 transition-all">
                       {getIcon(pillar.iconName)}
                     </div>
-                    <span className="font-mono text-2xl font-black text-zinc-300">
+                    <span className="font-mono text-lg sm:text-2xl font-black text-zinc-300">
                       0{pillar.id}
                     </span>
                   </div>
                   
-                  <h3 className="text-xl font-bold font-display text-zinc-900 mb-3">
+                  <h3 className="text-sm sm:text-xl font-bold font-display text-zinc-900 mb-2">
                     {pillar.title}
                   </h3>
                   
-                  <p className="text-zinc-600 text-sm leading-relaxed font-light">
+                  <p className="text-zinc-650 text-xs sm:text-sm leading-relaxed font-light">
                     {pillar.description}
                   </p>
                 </div>
 
                 {/* Hover highlight bar */}
-                <div className="w-full h-1 bg-zinc-250 group-hover:bg-brand-red rounded-full mt-6 transition-all duration-300" />
+                <div className="w-full h-1 bg-zinc-250 group-hover:bg-brand-red rounded-full mt-4 sm:mt-6 transition-all duration-300" />
               </motion.div>
             );
           })}
