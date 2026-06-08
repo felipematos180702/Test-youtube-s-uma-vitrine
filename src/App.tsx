@@ -58,7 +58,7 @@ export default function App() {
       <LiveSalesNotifications />
 
       {/* Hero Header Area */}
-      <header className="pt-5 pb-3 md:pt-10 md:pb-6 px-4 text-center max-w-5xl mx-auto">
+      <header className="pt-5 pb-1 md:pt-10 md:pb-2 px-4 text-center max-w-5xl mx-auto">
         {/* Urgent Warning Tag line */}
         <div className="inline-flex items-center gap-1 bg-brand-red/15 border border-brand-red/30 px-2 py-0.5 md:px-4 md:py-2 rounded-full mb-2 md:mb-6">
           <Flame className="w-3 h-3 md:w-4 md:h-4 text-brand-red animate-pulse" />
@@ -68,27 +68,31 @@ export default function App() {
         </div>
 
         {/* Big Crimson Display Headline (Copy Base) */}
-        <h1 className="text-[26px] sm:text-[26px] md:text-5xl lg:text-6xl font-black font-display tracking-tight leading-[1.15] md:leading-[1.1] max-w-4xl mx-auto text-white uppercase">
+        <h1 className="text-[26px] sm:text-[26px] md:text-5xl lg:text-6xl font-black font-display tracking-tight leading-[1.15] md:leading-[1.1] max-w-4xl mx-auto text-white uppercase mb-4">
           Visualização <span className="text-brand-red underline decoration-brand-red/30 underline-offset-4">Não Dá Dinheiro</span>: Vendas sim!
-          <span className="text-[19px] sm:text-xl md:text-[34px] block mt-3 md:mt-4 text-zinc-100 font-extrabold font-display uppercase">
-            Sua Rede Social é uma <span className="text-brand-green">PODEROSA</span> Vitrine de Vendas!
-          </span>
-          <span className="text-base sm:text-lg md:text-[25px] block mt-2 text-white font-bold tracking-normal uppercase">
-            Você só precisa aprender como vender!
-          </span>
         </h1>
-
-        {/* Subtitle Supporting Info */}
-        <p className="text-zinc-400 mt-3 md:mt-6 text-xs sm:text-sm md:text-[17px] max-w-2xl mx-auto font-light leading-relaxed">
-          Esqueça as migalhas de views do Instagram ou YouTube. Descubra como <strong className="text-[#a7a7a7] md:text-[17px] font-normal">fazer dinheiro de verdade</strong> vendendo no mercado de afiliado, <strong className="text-white font-semibold">sem estoque e sem custos iniciais</strong>, transformando seu conteúdo em uma vitrine de vendas!
-        </p>
       </header>
 
       {/* Centralized VSL Video Player Module */}
       <VslPlayer />
 
+      {/* Subtitles and Description Section (Placed below video and above CTA button) */}
+      <div className="px-4 text-center max-w-4xl mx-auto mt-6 md:mt-10">
+        <h2 className="text-[19px] sm:text-xl md:text-[34px] block text-zinc-100 font-extrabold font-display uppercase leading-tight">
+          Sua Rede Social é uma <span className="text-brand-green">PODEROSA</span> Vitrine de Vendas!
+        </h2>
+        <span className="text-base sm:text-lg md:text-[25px] block mt-2 text-white font-bold tracking-normal uppercase">
+          Você só precisa aprender como vender!
+        </span>
+
+        {/* Subtitle Supporting Info */}
+        <p className="text-zinc-400 mt-4 md:mt-6 text-xs sm:text-sm md:text-[17px] max-w-2xl mx-auto font-light leading-relaxed">
+          Esqueça as migalhas de views do Instagram ou YouTube. Descubra como <strong className="text-[#a7a7a7] md:text-[17px] font-normal">fazer dinheiro de verdade</strong> vendendo no mercado de afiliado, <strong className="text-white font-semibold">sem estoque e sem custos iniciais</strong>, transformando seu conteúdo em uma vitrine de vendas!
+        </p>
+      </div>
+
       {/* CTA Button Module 1 (Below Video) */}
-      <div className="flex flex-col items-center justify-center px-4 max-w-2xl mx-auto text-center gap-3 mt-10 md:mt-16 pb-16 md:pb-24">
+      <div className="flex flex-col items-center justify-center px-4 max-w-2xl mx-auto text-center gap-3 mt-8 md:mt-12 pb-16 md:pb-24">
         <motion.button
           onClick={initiatePurchase}
           whileHover={{ scale: 1.03 }}
