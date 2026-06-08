@@ -30,6 +30,12 @@ export const benefitPillars: BenefitPillar[] = [
     title: "Suporte e Atualizações Constantes",
     description: "Entre para um ecossistema ativo que te dá de bandeja o caminho das pedras, com suporte contínuo e atualizações frequentes das melhores ofertas e produtos ocultos do mercado.",
     iconName: "ShieldCheck"
+  },
+  {
+    id: 6,
+    title: "Escalável, venda até 10x +",
+    description: "Além de aprender a vender online, você vai passar a vender 10x mais que qualquer pessoa que utiliza apenas o Youtube ou Instagram pra fazer uma venda, vou te mostrar o método que faz um cliente comprar comigo várias e várias vezes!",
+    iconName: "TrendingUp"
   }
 ];
 
@@ -94,7 +100,7 @@ export const faqItems: FAQItem[] = [
   {
     id: "faq4",
     question: "Quanto tempo vou demorar para ter os primeiros resultados?",
-    answer: "Os resultados variam de pessoa para pessoa, pois dependem da aplicação direta do passo a passo. No entanto, temos dezenas de alunos que realizaram suas primeiras vendas nas primeiras 48 horas após konfigurarem sua vitrine magnética."
+    answer: "Os resultados variam de pessoa para pessoa, pois dependem da aplicação direta do passo a passo. No entanto, temos centenas de alunos que realizaram suas primeiras vendas nas primeiras 48 horas após configurarem sua vitrine magnética."
   },
   {
     id: "faq5",

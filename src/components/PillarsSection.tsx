@@ -31,10 +31,10 @@ export default function PillarsSection() {
             Por Trás Da Operação
           </span>
           <h2 className="text-3xl md:text-4xl font-extrabold font-display text-zinc-900 tracking-tight leading-tight max-w-3xl mx-auto">
-            Os 5 Pilares Fundamentais do Nosso <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-red to-orange-500">Mecanismo Exclusivo</span>
+            Os 6 Pilares Fundamentais do Nosso <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-red to-orange-500">Mecanismo Exclusivo</span>
           </h2>
           <p className="text-zinc-600 mt-4 max-w-xl mx-auto text-sm md:text-base">
-            Desenhado meticulosamente para quem busca escalabilidade rápida e previsível, sem teorias baratas e direto ao faturamento real.
+            Desenhado especialmente para quem busca escalar de forma rápida e precisa, você vai aprender a vender! sem estoque, são 23 aulas que te levam direto ao faturamento real.
           </p>
         </div>
 

@@ -14,34 +14,48 @@ interface PrintSlot {
 export default function TestimonialsCarousel() {
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxImg, setLightboxImg] = useState<string | null>(null);
+  const [selectedSlot, setSelectedSlot] = useState<PrintSlot | null>(null);
 
-  // 4-card high-conversion bento structure: empty slots ready for the user.
+  // 5-card high-conversion bento structure: loaded with real high-converting student proofs.
   const printSlots: PrintSlot[] = [
     {
       id: "slot1",
-      title: "Painel de Vendas (Acumulado)",
-      placeholderLabel: "Arraste e solte o Print do Painel de Faturamento aqui"
+      title: "DEPOIMENTO DE ALUNO",
+      placeholderLabel: "Arraste e solte o Print do Painel de Faturamento aqui",
+      src: "https://lh3.googleusercontent.com/d/1xRxMHoNoOujE8StR9mzCpQPJi52d2geG"
     },
     {
       id: "slot2",
-      title: "Notificações de Comissões",
-      placeholderLabel: "Arraste e solte o Print de Notificações Pop-up aqui"
+      title: "DEPOIMENTO DE ALUNO",
+      placeholderLabel: "Arraste e solte o Print de Notificações Pop-up aqui",
+      src: "https://lh3.googleusercontent.com/d/1aUTbOaORVbcW5IudJNvM5LJRB91lkdAU"
     },
     {
       id: "slot3",
-      title: "Depoimento WhatsApp / Grupo",
-      placeholderLabel: "Arraste e solte o Print 3 do celular aqui"
+      title: "DEPOIMENTO DE ALUNO",
+      placeholderLabel: "Arraste e solte o Print 3 do celular aqui",
+      src: "https://lh3.googleusercontent.com/d/18vRRanDpLbHYFi-qY__kTdnsMsfPsWQn"
     },
     {
       id: "slot4",
-      title: "Histórico de Retirada / Saques",
-      placeholderLabel: "Arraste e solte o Print 4 do celular aqui"
+      title: "Minha comissão em apenas 6 dias de operação",
+      placeholderLabel: "Arraste e solte o Print 4 do celular aqui",
+      src: "https://lh3.googleusercontent.com/d/1nnYE4lTAiTf2BV4eGm0Ma4U5O6H0dMaX"
+    },
+    {
+      id: "slot5",
+      title: "Meus pagamentos da Amazon",
+      placeholderLabel: "Arraste e solte o Print 5 do celular aqui",
+      src: "https://lh3.googleusercontent.com/d/1wCIF_ljcvgjTVRNV4xw4TGCISih8XNwk"
     }
   ];
 
-  const openLightbox = (src: string) => {
-    setLightboxImg(src);
-    setLightboxOpen(true);
+  const openLightbox = (slot: PrintSlot) => {
+    if (slot.src) {
+      setLightboxImg(slot.src);
+      setSelectedSlot(slot);
+      setLightboxOpen(true);
+    }
   };
 
   return (
@@ -61,7 +75,7 @@ export default function TestimonialsCarousel() {
         </div>
 
         {/* Grid of clean visual mockup frames */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-6">
           {printSlots.map((slot, index) => {
             const hasImage = !!slot.src;
             return (
@@ -96,7 +110,7 @@ export default function TestimonialsCarousel() {
                         />
                         {/* Click overlay tool triggers */}
                         <div
-                          onClick={() => openLightbox(slot.src || '')}
+                          onClick={() => openLightbox(slot)}
                           className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-all duration-300 cursor-pointer z-10"
                         >
                           <div className="bg-brand-green text-zinc-950 px-4 py-2 rounded-full font-bold text-xs flex items-center gap-1.5 shadow-lg">
@@ -144,7 +158,10 @@ export default function TestimonialsCarousel() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            onClick={() => setLightboxOpen(false)}
+            onClick={() => {
+              setLightboxOpen(false);
+              setSelectedSlot(null);
+            }}
             className="fixed inset-0 bg-black/95 z-[999] flex items-center justify-center p-4 cursor-zoom-out"
           >
             <motion.div
@@ -161,14 +178,21 @@ export default function TestimonialsCarousel() {
                 referrerPolicy="no-referrer"
               />
               <button
-                onClick={() => setLightboxOpen(false)}
+                onClick={() => {
+                  setLightboxOpen(false);
+                  setSelectedSlot(null);
+                }}
                 className="absolute -top-12 right-0 bg-zinc-900 border border-white/10 text-white px-4 py-2 rounded-xl text-xs font-bold hover:bg-brand-red hover:border-brand-red transition duration-200"
               >
                 Fechar [X]
               </button>
               <div className="text-center text-zinc-400 text-xs mt-3 flex items-center justify-center gap-1 bg-zinc-950 py-1.5 px-3 rounded-lg border border-white/5">
                 <Sparkles className="w-3.5 h-3.5 text-brand-green" />
-                <span>Resultado Real de Aluno Integrado ao Método</span>
+                <span>
+                  {selectedSlot?.id === "slot4" || selectedSlot?.id === "slot5"
+                    ? "Meu resultado pessoal no mercado"
+                    : "Resultado Real de Aluno Integrado ao Método"}
+                </span>
               </div>
             </motion.div>
           </motion.div>

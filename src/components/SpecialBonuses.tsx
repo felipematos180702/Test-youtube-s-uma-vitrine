@@ -59,8 +59,14 @@ export default function SpecialBonuses() {
         <h2 className="text-3xl md:text-5xl font-black font-display text-white tracking-tight leading-none">
           Bônus Exclusivos <span className="text-emerald-400 bg-clip-text">Inclusos na Sua Inscrição</span> Hoje
         </h2>
-        <p className="text-zinc-400 mt-4 max-w-2xl mx-auto text-sm md:text-base font-light">
-          Ao se inscrever agora, você destrava o acesso imediato a ferramentas, grupos e estratégias secretas para acelerar seus resultados.
+        <p className="text-zinc-300 mt-6 max-w-3xl mx-auto text-[17px] font-light leading-relaxed">
+          <span 
+            className="block text-white text-[22px] font-black font-display uppercase tracking-tight mb-3 mx-auto"
+            style={{ width: '768px', borderWidth: '1px', borderRadius: '2px', lineHeight: '35.75px', borderColor: '#000000' }}
+          >
+            SÃO PRATICAMENTE <span className="text-[#ff0909] font-extrabold" style={{ paddingTop: '2px', paddingBottom: '2px', paddingRight: '-1px' }}>2 CURSOS DENTRO DE 1</span>
+          </span>
+          Ao garantir sua vaga hoje, você também desbloqueia gratuitamente o módulo completo de <strong className="text-emerald-300 font-extrabold">Tráfego Pago</strong>, um conteúdo que sozinho já tem potencial para transformar seus resultados.
         </p>
       </div>
 

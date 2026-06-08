@@ -48,8 +48,8 @@ const modulesData: ModuleItem[] = [
   },
   {
     number: "MÓDULO 4",
-    title: "A MELHOR FERRAMENTA DE VENDAS !",
-    description: "Configurando a tecnologia certa para gerenciar múltiplos leads em tempo real de forma automática. O motor por trás de todas as vitrines de alta comissão.",
+    title: "A MELHOR FERRAMENTA DE VENDAS!",
+    description: "Vou te ensinar como vender até 10x mais, levando a sua operação além das vendas do Youtube ou Instagram, te fazendo vender todo santo dia!",
     icon: Cpu,
     badge: "Automação Total"
   },
@@ -85,7 +85,29 @@ const modulesData: ModuleItem[] = [
 
 export default function CourseModules() {
   const [isHovered, setIsHovered] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsVisible(entry.isIntersecting);
+      },
+      { threshold: 0.05 }
+    );
+
+    const currentSection = sectionRef.current;
+    if (currentSection) {
+      observer.observe(currentSection);
+    }
+
+    return () => {
+      if (currentSection) {
+        observer.unobserve(currentSection);
+      }
+    };
+  }, []);
 
   // Smooth scroll manually on button click if desired
   const handleScrollRight = () => {
@@ -105,6 +127,7 @@ export default function CourseModules() {
 
   return (
     <section 
+      ref={sectionRef}
       id="cronograma-curso" 
       className="py-20 w-full overflow-hidden relative"
       onMouseEnter={() => setIsHovered(true)}
@@ -182,7 +205,7 @@ export default function CourseModules() {
           className="overflow-x-auto no-scrollbar py-4"
         >
           {/* Animated marquee tracks containing the double card modules list */}
-          <div className={`animate-marquee-smooth ${isHovered ? 'paused-state' : ''} gap-6`}>
+          <div className={`animate-marquee-smooth ${isHovered || !isVisible ? 'paused-state' : ''} gap-6`}>
             {duplicatedModules.map((module, index) => {
               const IconComponent = module.icon;
               return (
