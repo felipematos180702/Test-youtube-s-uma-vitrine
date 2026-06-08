@@ -88,7 +88,7 @@ export default function App() {
       <VslPlayer />
 
       {/* CTA Button Module 1 (Below Video) */}
-      <div className="flex flex-col items-center justify-center px-4 max-w-2xl mx-auto text-center gap-3">
+      <div className="flex flex-col items-center justify-center px-4 max-w-2xl mx-auto text-center gap-3 mt-10 md:mt-16 pb-16 md:pb-24">
         <motion.button
           onClick={initiatePurchase}
           whileHover={{ scale: 1.03 }}

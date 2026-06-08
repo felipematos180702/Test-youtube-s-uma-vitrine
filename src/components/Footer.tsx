@@ -17,9 +17,6 @@ export default function Footer() {
           <p className="text-xs text-zinc-600 mt-2">
             © {new Date().getFullYear()} "YouTube é só uma vitrine, visualização não dá dinheiro". Todos os direitos reservados.
           </p>
-          <p className="text-[10px] text-zinc-600 mt-1">
-            CNPJ: 45.182.203/0001-90 • Belo Horizonte, Minas Gerais.
-          </p>
         </div>
 
         {/* Center: Legal Links */}

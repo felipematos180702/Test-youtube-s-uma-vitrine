@@ -5,7 +5,7 @@ export default function VslPlayer() {
   const embedUrl = "https://www.youtube.com/embed/3mjM0iZF4Lg?autoplay=0&mute=0&rel=0&showinfo=0&controls=1";
 
   return (
-    <div id="vsl-player-container" className="w-full max-w-4xl mx-auto my-4 md:my-8 px-2 md:px-4">
+    <div id="vsl-player-container" className="w-full max-w-4xl mx-auto mt-4 md:mt-8 mb-10 md:mb-16 px-2 md:px-4">
       {/* VSL Outer frame with premium dark glowing glassmorphism */}
       <div className="relative group rounded-xl md:rounded-2xl bg-gradient-to-b from-[#1F1F21] to-[#0A0A0B] p-1 md:p-2 border border-white/10 shadow-[0_0_50px_rgba(255,0,60,0.15)] transition-all duration-500 hover:shadow-[0_0_60px_rgba(255,0,60,0.25)]">
         
