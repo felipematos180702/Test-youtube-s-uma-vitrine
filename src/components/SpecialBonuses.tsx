@@ -61,8 +61,8 @@ export default function SpecialBonuses() {
         </h2>
         <p className="text-zinc-300 mt-6 max-w-3xl mx-auto text-[17px] font-light leading-relaxed">
           <span 
-            className="block text-white text-[22px] font-black font-display uppercase tracking-tight mb-3 mx-auto"
-            style={{ width: '768px', borderWidth: '1px', borderRadius: '2px', lineHeight: '35.75px', borderColor: '#000000' }}
+            className="block text-white text-[16px] sm:text-[18px] md:text-[22px] font-black font-display uppercase tracking-tight mb-3 mx-auto px-4"
+            style={{ width: '100%', maxWidth: '768px', borderWidth: '1px', borderRadius: '2px', lineHeight: '35.75px', borderColor: '#000000' }}
           >
             SÃO PRATICAMENTE <span className="text-[#ff0909] font-extrabold" style={{ paddingTop: '2px', paddingBottom: '2px', paddingRight: '-1px' }}>2 CURSOS DENTRO DE 1</span>
           </span>
