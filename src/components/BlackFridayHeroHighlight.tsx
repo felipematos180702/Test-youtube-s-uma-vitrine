@@ -13,22 +13,22 @@ export function BlackFridaySeal({ onClick, className = '' }: BlackFridaySealProp
         initial={{ scale: 0.95, opacity: 0 }}
         animate={{ scale: [1, 1.02, 1], opacity: 1 }}
         transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
-        className="relative inline-flex items-center gap-2 px-3.5 py-1.5 md:px-5 md:py-2 rounded-full bg-gradient-to-r from-zinc-950 via-zinc-900 to-black border border-amber-500/40 shadow-[0_0_25px_rgba(245,158,11,0.25)] text-center cursor-pointer group hover:border-amber-400 transition-all"
+        className="relative inline-flex items-center gap-1.5 sm:gap-2 px-2.5 py-1 sm:px-3.5 sm:py-1.5 md:px-5 md:py-2 rounded-full bg-gradient-to-r from-zinc-950 via-zinc-900 to-black border border-amber-500/40 shadow-[0_0_25px_rgba(245,158,11,0.25)] text-center cursor-pointer group hover:border-amber-400 transition-all max-w-full"
         onClick={onClick}
       >
         {/* Glowing dot effect */}
-        <span className="relative flex h-2.5 w-2.5">
+        <span className="relative flex h-2 w-2 sm:h-2.5 sm:w-2.5 shrink-0">
           <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
-          <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-amber-500"></span>
+          <span className="relative inline-flex rounded-full h-2 w-2 sm:h-2.5 sm:w-2.5 bg-amber-500"></span>
         </span>
 
         {/* Badge Title */}
-        <div className="flex items-center gap-1.5 md:gap-2">
-          <span className="bg-gradient-to-r from-amber-400 via-amber-300 to-yellow-500 text-black text-[9px] md:text-[11px] font-black uppercase px-2 py-0.5 rounded font-display tracking-wider shadow-sm">
+        <div className="flex items-center gap-1.5 md:gap-2 whitespace-nowrap">
+          <span className="bg-gradient-to-r from-amber-400 via-amber-300 to-yellow-500 text-black text-[8px] sm:text-[9px] md:text-[11px] font-black uppercase px-1.5 sm:px-2 py-0.5 rounded font-display tracking-normal sm:tracking-wider shadow-sm shrink-0">
             SELO OFICIAL
           </span>
-          <span className="text-white text-xs md:text-sm font-black font-display tracking-widest uppercase flex items-center gap-1">
-            BLACK FRIDAY <span className="text-amber-400 font-extrabold">• DESCONTO LIBERADO</span>
+          <span className="text-white text-[9px] sm:text-[11px] md:text-sm font-black font-display tracking-tight sm:tracking-wider md:tracking-widest uppercase inline-flex items-center gap-1 whitespace-nowrap">
+            BLACK FRIDAY <span className="text-amber-400 font-extrabold whitespace-nowrap">• DESCONTO LIBERADO</span>
           </span>
         </div>
       </motion.div>
@@ -69,7 +69,7 @@ export function BlackFridayMarquee() {
           repeat: Infinity,
           repeatType: 'loop',
           ease: 'linear',
-          duration: 28,
+          duration: 12,
         }}
       >
         {duplicatedItems.map((item, idx) => {

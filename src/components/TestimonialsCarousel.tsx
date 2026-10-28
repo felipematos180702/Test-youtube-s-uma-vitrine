@@ -74,80 +74,161 @@ export default function TestimonialsCarousel() {
           </p>
         </div>
 
-        {/* Grid of clean visual mockup frames */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-6">
-          {printSlots.map((slot, index) => {
-            const hasImage = !!slot.src;
-            return (
-              <motion.div
-                key={slot.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.4, delay: index * 0.08 }}
-                whileHover={{ y: -6 }}
-                className="group p-4 rounded-3xl bg-zinc-50 border border-zinc-200 hover:border-brand-green/30 shadow-sm hover:shadow-[0_15px_30px_rgba(16,185,129,0.06)] transition-all duration-300 flex flex-col justify-between"
-              >
-                <div>
-                  {/* Header label with small green bullet */}
-                  <div className="flex items-center justify-between mb-3 px-1">
-                    <span className="text-[11px] font-sans font-bold text-zinc-600 uppercase tracking-tight">
-                      {slot.title}
-                    </span>
-                    <span className="flex h-1.5 w-1.5 rounded-full bg-brand-green" />
-                  </div>
+        {/* Prints Gallery Container: Animated Infinite Carousel on Mobile, Grid on Desktop */}
+        <div>
+          {/* Mobile Animated Infinite Carousel */}
+          <div className="block md:hidden relative -mx-4 overflow-hidden py-2">
+            {/* Left & Right subtle edge fade */}
+            <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-r from-white to-transparent z-10" />
+            <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-white to-transparent z-10" />
 
-                  {/* Smartphone simulation container slot */}
-                  <div className="relative aspect-[3/4] w-full rounded-2xl bg-zinc-100 border border-zinc-200 overflow-hidden flex flex-col items-center justify-center select-none shadow-inner">
-                    {hasImage ? (
-                      <>
-                        {/* Real Image Render */}
-                        <img
-                          src={slot.src}
-                          alt={slot.title}
-                          className="w-full h-full object-cover rounded-2xl hover:scale-105 transition-all duration-500"
-                          referrerPolicy="no-referrer"
-                        />
-                        {/* Click overlay tool triggers */}
-                        <div
-                          onClick={() => openLightbox(slot)}
-                          className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-all duration-300 cursor-pointer z-10"
-                        >
-                          <div className="bg-brand-green text-zinc-950 px-4 py-2 rounded-full font-bold text-xs flex items-center gap-1.5 shadow-lg">
-                            <Eye className="w-4 h-4" />
-                            Ampliar Print
-                          </div>
-                        </div>
-                      </>
-                    ) : (
-                      /* Elegant Dotted Interactive Placeholder Slot */
-                      <div className="p-6 text-center flex flex-col items-center justify-center h-full w-full border-2 border-dashed border-zinc-300 rounded-2xl bg-white hover:bg-zinc-50 transition-colors duration-300">
-                        <div className="p-3 bg-zinc-50 rounded-2xl border border-zinc-200 text-zinc-400 mb-4 group-hover:text-brand-green group-hover:border-brand-green/35 transition-all">
-                          <ImageIcon className="w-7 h-7" />
-                        </div>
-                        <span className="text-xs font-bold text-zinc-700 block mb-1">Espaço Reservado</span>
-                        <p className="text-[10px] text-zinc-500 leading-relaxed max-w-[160px] mx-auto">
-                          {slot.placeholderLabel}
-                        </p>
-                        <span className="text-[9px] text-[#22C55E]/40 mt-4 tracking-wider uppercase font-mono group-hover:text-brand-green/70 transition-colors">
-                          Pronto para Upload
+            <motion.div
+              className="flex gap-4 w-max px-4"
+              animate={{ x: ["0%", "-50%"] }}
+              transition={{
+                ease: "linear",
+                duration: 18,
+                repeat: Infinity,
+              }}
+            >
+              {[...printSlots, ...printSlots].map((slot, idx) => {
+                const hasImage = !!slot.src;
+                return (
+                  <div
+                    key={`${slot.id}-carousel-${idx}`}
+                    onClick={() => openLightbox(slot)}
+                    className="w-[230px] shrink-0 p-3.5 rounded-3xl bg-zinc-50 border border-zinc-200 shadow-sm active:scale-[0.98] transition-transform duration-200 flex flex-col justify-between cursor-pointer select-none"
+                  >
+                    <div>
+                      {/* Header label with small green bullet */}
+                      <div className="flex items-center justify-between mb-2.5 px-1">
+                        <span className="text-[10px] font-sans font-bold text-zinc-600 uppercase tracking-tight truncate">
+                          {slot.title}
                         </span>
+                        <span className="flex h-1.5 w-1.5 rounded-full bg-brand-green shrink-0 ml-1" />
                       </div>
-                    )}
-                  </div>
-                </div>
 
-                {/* Status info bar */}
-                <div className="mt-4 pt-3.5 border-t border-zinc-200 flex items-center justify-between text-[10px] font-mono text-zinc-500 px-1">
-                  <span className="flex items-center gap-1">
-                    <ShieldCheck className="w-3.5 h-3.5 text-brand-green" />
-                    Print Real Validado
-                  </span>
-                  <span>ID: {slot.id.toUpperCase()}</span>
-                </div>
-              </motion.div>
-            );
-          })}
+                      {/* Smartphone simulation container slot */}
+                      <div className="relative aspect-[3/4] w-full rounded-2xl bg-zinc-100 border border-zinc-200 overflow-hidden flex flex-col items-center justify-center shadow-inner">
+                        {hasImage ? (
+                          <>
+                            <img
+                              src={slot.src}
+                              alt={slot.title}
+                              className="w-full h-full object-cover rounded-2xl"
+                              referrerPolicy="no-referrer"
+                              loading="lazy"
+                            />
+                            <div className="absolute bottom-2 right-2 bg-black/70 backdrop-blur-sm text-white px-2 py-1 rounded-full text-[9px] font-bold flex items-center gap-1 shadow">
+                              <Eye className="w-3 h-3 text-brand-green" />
+                              Ampliar
+                            </div>
+                          </>
+                        ) : (
+                          <div className="p-4 text-center flex flex-col items-center justify-center h-full w-full border-2 border-dashed border-zinc-300 rounded-2xl bg-white">
+                            <ImageIcon className="w-6 h-6 text-zinc-400 mb-2" />
+                            <span className="text-xs font-bold text-zinc-700 block mb-1">Espaço Reservado</span>
+                            <p className="text-[9px] text-zinc-500 leading-relaxed">
+                              {slot.placeholderLabel}
+                            </p>
+                          </div>
+                        )}
+                      </div>
+                    </div>
+
+                    {/* Status info bar */}
+                    <div className="mt-3 pt-2.5 border-t border-zinc-200 flex items-center justify-between text-[10px] font-mono text-zinc-500 px-1">
+                      <span className="flex items-center gap-1">
+                        <ShieldCheck className="w-3 h-3 text-brand-green shrink-0" />
+                        <span className="truncate text-[9px]">Validado</span>
+                      </span>
+                      <span className="text-[9px]">ID: {slot.id.toUpperCase()}</span>
+                    </div>
+                  </div>
+                );
+              })}
+            </motion.div>
+
+            <p className="text-center text-[11px] text-zinc-500 mt-3 font-medium flex items-center justify-center gap-1.5">
+              <span>👆</span> Toque em qualquer print para ampliar
+            </p>
+          </div>
+
+          {/* Desktop Static Grid Layout */}
+          <div className="hidden md:grid md:grid-cols-3 xl:grid-cols-5 gap-6">
+            {printSlots.map((slot, index) => {
+              const hasImage = !!slot.src;
+              return (
+                <motion.div
+                  key={slot.id}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  transition={{ duration: 0.4, delay: index * 0.08 }}
+                  whileHover={{ y: -6 }}
+                  className="group p-4 rounded-3xl bg-zinc-50 border border-zinc-200 hover:border-brand-green/30 shadow-sm hover:shadow-[0_15px_30px_rgba(16,185,129,0.06)] transition-all duration-300 flex flex-col justify-between"
+                >
+                  <div>
+                    {/* Header label with small green bullet */}
+                    <div className="flex items-center justify-between mb-3 px-1">
+                      <span className="text-[11px] font-sans font-bold text-zinc-600 uppercase tracking-tight">
+                        {slot.title}
+                      </span>
+                      <span className="flex h-1.5 w-1.5 rounded-full bg-brand-green" />
+                    </div>
+
+                    {/* Smartphone simulation container slot */}
+                    <div className="relative aspect-[3/4] w-full rounded-2xl bg-zinc-100 border border-zinc-200 overflow-hidden flex flex-col items-center justify-center select-none shadow-inner">
+                      {hasImage ? (
+                        <>
+                          {/* Real Image Render */}
+                          <img
+                            src={slot.src}
+                            alt={slot.title}
+                            className="w-full h-full object-cover rounded-2xl hover:scale-105 transition-all duration-500"
+                            referrerPolicy="no-referrer"
+                          />
+                          {/* Click overlay tool triggers */}
+                          <div
+                            onClick={() => openLightbox(slot)}
+                            className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-all duration-300 cursor-pointer z-10"
+                          >
+                            <div className="bg-brand-green text-zinc-950 px-4 py-2 rounded-full font-bold text-xs flex items-center gap-1.5 shadow-lg">
+                              <Eye className="w-4 h-4" />
+                              Ampliar Print
+                            </div>
+                          </div>
+                        </>
+                      ) : (
+                        /* Elegant Dotted Interactive Placeholder Slot */
+                        <div className="p-6 text-center flex flex-col items-center justify-center h-full w-full border-2 border-dashed border-zinc-300 rounded-2xl bg-white hover:bg-zinc-50 transition-colors duration-300">
+                          <div className="p-3 bg-zinc-50 rounded-2xl border border-zinc-200 text-zinc-400 mb-4 group-hover:text-brand-green group-hover:border-brand-green/35 transition-all">
+                            <ImageIcon className="w-7 h-7" />
+                          </div>
+                          <span className="text-xs font-bold text-zinc-700 block mb-1">Espaço Reservado</span>
+                          <p className="text-[10px] text-zinc-500 leading-relaxed max-w-[160px] mx-auto">
+                            {slot.placeholderLabel}
+                          </p>
+                          <span className="text-[9px] text-[#22C55E]/40 mt-4 tracking-wider uppercase font-mono group-hover:text-brand-green/70 transition-colors">
+                            Pronto para Upload
+                          </span>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+
+                  {/* Status info bar */}
+                  <div className="mt-4 pt-3.5 border-t border-zinc-200 flex items-center justify-between text-[10px] font-mono text-zinc-500 px-1">
+                    <span className="flex items-center gap-1">
+                      <ShieldCheck className="w-3.5 h-3.5 text-brand-green" />
+                      Print Real Validado
+                    </span>
+                    <span>ID: {slot.id.toUpperCase()}</span>
+                  </div>
+                </motion.div>
+              );
+            })}
+          </div>
         </div>
       </div>
 
