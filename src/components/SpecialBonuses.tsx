@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { Gift, Users, Award, ShieldAlert, Sparkles, Megaphone } from 'lucide-react';
+import { Gift, Users, Award, ShieldAlert, Sparkles } from 'lucide-react';
 
 interface BonusCardProps {
   index: number;
@@ -52,9 +52,9 @@ export default function SpecialBonuses() {
       <div className="absolute bottom-10 right-10 w-[300px] h-[300px] bg-emerald-600/5 rounded-full filter blur-[100px] pointer-events-none" />
 
       <div className="max-w-5xl mx-auto text-center mb-16 relative z-10">
-        <span className="bg-gradient-to-r from-emerald-500/20 to-green-600/20 border border-emerald-500/40 text-emerald-400 text-[10px] md:text-xs font-black uppercase tracking-widest px-4 py-1.5 rounded-full inline-flex items-center gap-1.5 mb-4">
-          <Gift className="w-4 h-4 text-emerald-400 animate-bounce" />
-          Oferta Especial Ativa - Apenas Hoje
+        <span className="bg-gradient-to-r from-amber-500/20 via-emerald-500/20 to-amber-500/20 border border-amber-500/40 text-amber-300 text-[10px] md:text-xs font-black uppercase tracking-widest px-4 py-1.5 rounded-full inline-flex items-center gap-1.5 mb-4">
+          <Gift className="w-4 h-4 text-amber-400 animate-bounce" />
+          Bônus Inclusos na Black Friday • R$ 1.191,00 Grátis Hoje
         </span>
         <h2 className="text-3xl md:text-5xl font-black font-display text-white tracking-tight leading-none">
           Bônus Exclusivos <span className="text-emerald-400 bg-clip-text">Inclusos na Sua Inscrição</span> Hoje
@@ -140,13 +140,7 @@ export default function SpecialBonuses() {
         })}
       </div>
 
-      {/* Simulated Urgent Counter/CTA Footer line to pump conversion */}
-      <div className="max-w-xl mx-auto text-center mt-12 bg-zinc-950/40 p-4 border border-zinc-800 rounded-2xl relative z-10 flex items-center justify-center gap-3">
-        <Megaphone className="w-5 h-5 text-emerald-500 flex-shrink-0 animate-pulse" />
-        <p className="text-[11px] md:text-xs text-zinc-400 font-light leading-relaxed">
-          🔒 Todos os bônus acima são <strong className="text-zinc-200">completamente digitais e liberados no mesmo segundo</strong> que seu pagamento for compensado com nosso checkout seguro.
-        </p>
-      </div>
+      {/* Simulated Urgent Counter/CTA Footer line to pump conversion removed as requested */}
 
     </section>
   );

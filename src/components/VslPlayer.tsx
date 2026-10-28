@@ -24,12 +24,12 @@ export default function VslPlayer() {
         </div>
 
         {/* Ambient indicator footer of the video */}
-        <div className="flex items-center justify-between mt-3 px-3 text-xs text-gray-400">
-          <div className="flex items-center gap-1.5 font-medium">
+        <div className="flex items-center justify-center sm:justify-between mt-3 px-3 text-xs text-gray-400">
+          <div className="hidden sm:flex items-center gap-1.5 font-medium">
             <span className="w-2 h-2 rounded-full bg-brand-red animate-ping" />
             <span className="font-mono text-zinc-500">Transmissão em HD @ 1080p</span>
           </div>
-          <div className="flex items-center gap-1 text-zinc-400">
+          <div className="flex items-center justify-center gap-1 text-zinc-400 text-center sm:text-right">
             <Volume2 className="w-3.5 h-3.5" />
             <span>Assista até o fim para liberar descontos extras</span>
           </div>

@@ -7,6 +7,7 @@ import SpecialBonuses from './components/SpecialBonuses';
 import TestimonialsCarousel from './components/TestimonialsCarousel';
 import FaqSection from './components/FaqSection';
 import LiveSalesNotifications from './components/LiveSalesNotifications';
+import { BlackFridaySeal, BlackFridayMarquee } from './components/BlackFridayHeroHighlight';
 import Footer from './components/Footer';
 
 import { 
@@ -42,6 +43,14 @@ export default function App() {
     window.location.href = "https://pay.kiwify.com.br/IuLXoda";
   };
 
+  const scrollToPricing = (e: MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    const element = document.getElementById('pricing-block');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   const handleFakePurchaseSubmit = (e: FormEvent) => {
     e.preventDefault();
     setCheckoutStep('success');
@@ -59,13 +68,11 @@ export default function App() {
 
       {/* Hero Header Area */}
       <header className="pt-5 pb-1 md:pt-10 md:pb-2 px-4 text-center max-w-5xl mx-auto">
-        {/* Urgent Warning Tag line */}
-        <div className="inline-flex items-center gap-1 bg-brand-red/15 border border-brand-red/30 px-2 py-0.5 md:px-4 md:py-2 rounded-full mb-2 md:mb-6">
-          <Flame className="w-3 h-3 md:w-4 md:h-4 text-brand-red animate-pulse" />
-          <span className="text-[9px] md:text-xs font-display font-extrabold uppercase tracking-widest text-[#FF3E6C]">
-            ⚠️ Oferta Especial de Lançamento Expirando Hoje
-          </span>
-        </div>
+        {/* Selo Oficial Black Friday */}
+        <BlackFridaySeal onClick={() => {
+          const el = document.getElementById('pricing-block');
+          if (el) el.scrollIntoView({ behavior: 'smooth' });
+        }} />
 
         {/* Big Crimson Display Headline (Copy Base) */}
         <h1 className="text-[26px] sm:text-[26px] md:text-5xl lg:text-6xl font-black font-display tracking-tight leading-[1.15] md:leading-[1.1] max-w-4xl mx-auto text-white uppercase mb-4">
@@ -92,9 +99,9 @@ export default function App() {
       </div>
 
       {/* CTA Button Module 1 (Below Video) */}
-      <div className="flex flex-col items-center justify-center px-4 max-w-2xl mx-auto text-center gap-3 mt-8 md:mt-12 pb-16 md:pb-24">
+      <div className="flex flex-col items-center justify-center px-4 max-w-2xl mx-auto text-center gap-3 mt-8 md:mt-12 pb-10 md:pb-14">
         <motion.button
-          onClick={initiatePurchase}
+          onClick={scrollToPricing}
           whileHover={{ scale: 1.03 }}
           whileTap={{ scale: 0.98 }}
           className="w-full bg-gradient-to-r from-brand-green to-emerald-500 hover:from-emerald-400 hover:to-brand-green text-black font-extrabold font-display text-xs sm:text-sm md:text-xl py-3.5 px-4 md:py-5 md:px-6 rounded-xl md:rounded-2xl shadow-[0_15px_30px_rgba(16,185,129,0.3)] hover:shadow-[0_20px_40px_rgba(16,185,129,0.55)] transition duration-300 uppercase tracking-wide flex items-center justify-center gap-2 md:gap-3 group relative overflow-hidden"
@@ -117,7 +124,10 @@ export default function App() {
         </div>
       </div>
 
-
+      {/* Carrossel Infinito com o nome Black Friday passando (Abaixo da seção Hero) */}
+      <div className="mb-10 md:mb-16">
+        <BlackFridayMarquee />
+      </div>
 
       {/* The 5 Pillars Bento Section */}
       <PillarsSection />
@@ -149,12 +159,12 @@ export default function App() {
           </h3>
 
           <div className="mt-8 flex flex-col items-center justify-center gap-1">
-            <span className="text-zinc-500 text-sm line-through">De R$ 997,00 por apenas</span>
+            <span className="text-zinc-500 text-sm line-through">De R$ 2.497,00 por apenas</span>
             <div className="flex items-baseline gap-1.5 text-brand-green">
               <span className="text-lg md:text-xl font-bold">12x de</span>
-              <span className="text-5xl md:text-6xl font-black font-display tracking-tight">R$ 64,85</span>
+              <span className="text-5xl md:text-6xl font-black font-display tracking-tight">R$ 162,37</span>
             </div>
-            <span className="text-zinc-400 font-bold block mt-2 text-sm md:text-base">ou R$ 627,00 à vista no PIX</span>
+            <span className="text-zinc-400 font-bold block mt-2 text-sm md:text-base">ou R$ 1.570 à vista</span>
           </div>
 
           {/* Core inclusions lines */}
@@ -201,7 +211,7 @@ export default function App() {
       <section className="bg-gradient-to-r from-black via-zinc-900 to-black border-y border-white/5 py-12 px-6 text-center max-w-4xl mx-auto rounded-3xl mt-12 mb-6">
         <h3 className="text-xl md:text-2xl font-black font-display text-white">⚠️ ATENÇÃO: AS VAGAS ESTÃO SE ESGOTANDO</h3>
         <p className="text-zinc-400 text-xs md:text-sm mt-3 leading-relaxed max-w-2xl mx-auto">
-          As vagas para esta turma com acesso ao preço promocional de lançamento de apenas <strong>R$ 627,00</strong> estão se esgotando rapidamente. Garanta sua vaga com o desconto vitalício agora ou pague o valor cheio de R$ 997,00 amanhã.
+          As vagas para esta turma com acesso ao preço promocional de lançamento de apenas <strong>12x de R$ 162,37 ou R$ 1.570 à vista</strong> estão se esgotando rapidamente. Garanta sua vaga com o desconto vitalício agora ou pague o valor cheio de R$ 2.497,00 amanhã.
         </p>
       </section>
 
@@ -250,7 +260,7 @@ export default function App() {
                 }}
                 className="w-full text-left text-[11px] p-2 bg-zinc-900 border border-white/5 rounded-lg text-zinc-200 hover:border-brand-green/45 hover:text-brand-green transition duration-200 block"
               >
-                👉 Qual o preço final com desconto? (R$ 627,00)
+                👉 Qual o preço final com desconto? (12x de R$ 162,37 ou R$ 1.570 à vista)
               </button>
               
               <button 
@@ -332,8 +342,8 @@ export default function App() {
                     <span className="text-zinc-500">1 Ano de mentoria e bônus inclusos</span>
                   </div>
                   <div className="text-right">
-                    <span className="font-bold text-brand-green block">R$ 627,00</span>
-                    <span className="text-zinc-500 text-[10px]">OU 12x de R$ 64,85</span>
+                    <span className="font-bold text-brand-green block">R$ 1.570,00</span>
+                    <span className="text-zinc-500 text-[10px]">OU 12x de R$ 162,37</span>
                   </div>
                 </div>
 
