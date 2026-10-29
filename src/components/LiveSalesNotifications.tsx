@@ -37,7 +37,7 @@ export default function LiveSalesNotifications() {
   }, []); // Bound strictly on mount to prevent indices resetting!
 
   return (
-    <div className="fixed bottom-4 left-4 z-50 max-w-sm pointer-events-none select-none hidden sm:block">
+    <div className="fixed bottom-3 left-3 sm:bottom-4 sm:left-4 z-50 max-w-[calc(100vw-24px)] sm:max-w-sm pointer-events-none select-none">
       <AnimatePresence>
         {currentSale && (
           <motion.div
@@ -45,25 +45,33 @@ export default function LiveSalesNotifications() {
             animate={{ opacity: 1, x: 0, scale: 1 }}
             exit={{ opacity: 0, x: -50, scale: 0.9 }}
             transition={{ duration: 0.4 }}
-            className="p-3.5 rounded-xl bg-zinc-950/95 border border-brand-green/20 shadow-[0_10px_35px_rgba(0,0,0,0.8)] backdrop-blur-md flex items-center gap-3.5 pointer-events-auto"
+            className="p-3 sm:p-3.5 rounded-xl bg-zinc-950/95 border border-brand-green/20 shadow-[0_10px_35px_rgba(0,0,0,0.8)] backdrop-blur-md flex items-center gap-3 pointer-events-auto"
           >
             {/* Success Coin Glow Icon */}
-            <div className="p-2.5 bg-brand-green/10 text-brand-green rounded-lg border border-brand-green/20 animate-pulse shrink-0">
-              <TrendingUp className="w-5 h-5" />
+            <div className="p-2 sm:p-2.5 bg-brand-green/10 text-brand-green rounded-lg border border-brand-green/20 animate-pulse shrink-0">
+              <TrendingUp className="w-4 h-4 sm:w-5 sm:h-5" />
             </div>
 
-            <div>
-              <div className="flex items-center gap-1">
-                <span className="font-bold text-xs text-white uppercase tracking-tight">{currentSale.name}</span>
+            <div className="min-w-0 flex-1">
+              <div className="flex items-center gap-1.5 flex-wrap">
+                <span className="font-bold text-xs text-white uppercase tracking-tight truncate">{currentSale.name}</span>
                 <span className="text-[10px] text-zinc-500">• {currentSale.location}</span>
-                <CheckCircle2 className="w-3.5 h-3.5 text-brand-green ml-0.5" />
+                <CheckCircle2 className="w-3.5 h-3.5 text-brand-green shrink-0" />
+                <span className="inline-flex items-center px-1.5 py-0.5 rounded text-[9px] font-black uppercase tracking-wider bg-orange-500/20 text-orange-400 border border-orange-500/40 shrink-0">
+                  Oferta Black
+                </span>
               </div>
-              <p className="text-[11px] text-zinc-300 mt-0.5 leading-tight font-medium">
-                Adquiriu o <span className="text-brand-green font-semibold">{currentSale.product}</span>
+              <p className="text-[11px] text-zinc-300 mt-0.5 leading-snug font-medium line-clamp-2">
+                Comprou na <span className="text-orange-400 font-bold">Oferta Black</span>: <span className="text-brand-green font-semibold">{currentSale.product}</span>
               </p>
-              <span className="text-[9px] text-zinc-500 font-mono block mt-1 uppercase">
-                Aprovado {currentSale.timeAgo}
-              </span>
+              <div className="flex items-center gap-1.5 mt-1">
+                <span className="text-[9px] text-zinc-500 font-mono uppercase">
+                  Aprovado {currentSale.timeAgo}
+                </span>
+                <span className="text-[9px] text-brand-green font-medium">
+                  • Verificado
+                </span>
+              </div>
             </div>
             
           </motion.div>
