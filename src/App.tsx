@@ -171,12 +171,9 @@ export default function App() {
             🔐 Acesso Seguro Garantido
           </div>
 
-          <span className="text-xs uppercase tracking-widest font-mono text-zinc-500 block mb-3">
-            PACOTE COMPLETO VITRINE AUTOMÁTICA
-          </span>
           
           <h3 className="text-3xl font-black font-display text-white">
-            Transforme Suas Redes em Máquina de Vendas
+            Transforme Suas Redes em uma Máquina de Vendas
           </h3>
 
           <div className="mt-8 flex flex-col items-center justify-center gap-1">
@@ -240,13 +237,6 @@ export default function App() {
         </div>
       </section>
 
-      {/* Urgency Announcement banner before FAQ */}
-      <section className="bg-gradient-to-r from-black via-zinc-900 to-black border-y border-white/5 py-12 px-6 text-center max-w-4xl mx-auto rounded-3xl mt-12 mb-6">
-        <h3 className="text-xl md:text-2xl font-black font-display text-white">⚠️ ATENÇÃO: AS VAGAS ESTÃO SE ESGOTANDO</h3>
-        <p className="text-zinc-400 text-xs md:text-sm mt-3 leading-relaxed max-w-2xl mx-auto">
-          As vagas para esta turma com acesso ao preço promocional de lançamento de apenas <strong>12x de R$ 50,37 ou R$ 487,00 à vista</strong> estão se esgotando rapidamente. Garanta sua vaga com o desconto vitalício agora ou pague o valor cheio de R$ 1.570,00 amanhã.
-        </p>
-      </section>
 
       {/* Accordion FAQ questions */}
       <FaqSection />
