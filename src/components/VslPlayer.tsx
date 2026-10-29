@@ -43,17 +43,22 @@ export default function VslPlayer() {
             >
               {/* Glowing CTA Button */}
               <motion.div 
-                whileHover={{ scale: 1.08 }}
+                whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="relative z-10 flex flex-col items-center text-center max-w-md px-4"
+                className="relative z-10 flex flex-col items-center text-center gap-3.5 max-w-md px-4"
               >
                 {/* Pulse ring play icon */}
                 <div className="relative flex items-center justify-center">
-                  <span className="animate-ping absolute inline-flex h-20 w-20 md:h-24 md:w-24 rounded-full bg-brand-green/40 opacity-75" />
-                  <div className="w-16 h-16 md:w-20 md:h-20 bg-gradient-to-tr from-brand-green via-emerald-400 to-emerald-300 rounded-full flex items-center justify-center shadow-[0_0_35px_rgba(16,185,129,0.6)] text-black font-black">
+                  <span className="animate-ping absolute inline-flex h-20 w-20 md:h-24 md:w-24 rounded-full bg-amber-400/40 opacity-75" />
+                  <div className="w-16 h-16 md:w-20 md:h-20 bg-gradient-to-tr from-amber-500 via-amber-400 to-yellow-300 rounded-full flex items-center justify-center shadow-[0_0_35px_rgba(245,158,11,0.6)] text-black font-black">
                     <Volume2 className="w-8 h-8 md:w-10 md:h-10 text-zinc-950 fill-zinc-950/20 translate-x-0.5" />
                   </div>
                 </div>
+
+                {/* Subtitle phrase in yellow */}
+                <p className="text-amber-400 text-xs sm:text-sm md:text-base font-extrabold font-display uppercase tracking-wide drop-shadow-[0_1px_10px_rgba(245,158,11,0.3)]">
+                  Assista ao vídeo e aproveite a Black
+                </p>
               </motion.div>
             </div>
           )}
