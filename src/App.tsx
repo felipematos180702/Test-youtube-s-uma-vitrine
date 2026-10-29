@@ -145,8 +145,15 @@ export default function App() {
       <section className="py-12 px-4 max-w-3xl mx-auto scroll-mt-24">
         
         {/* Core Pricing Plan Box */}
-        <div id="pricing-block" className="rounded-3xl bg-zinc-950 border border-brand-red/30 p-8 md:p-12 text-center relative shadow-[0_0_60px_rgba(255,0,60,0.1)]">
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-brand-red border border-brand-red text-white text-xs font-extrabold uppercase tracking-widest px-5 py-2 rounded-full shadow-lg">
+        <div id="pricing-block" className="rounded-3xl bg-zinc-950 border border-brand-red/30 p-8 md:p-12 pt-14 text-center relative shadow-[0_0_60px_rgba(255,0,60,0.1)]">
+          {/* Diagonal ribbon in top-right corner */}
+          <div className="absolute top-0 right-0 overflow-hidden w-36 h-36 pointer-events-none z-20 rounded-tr-3xl">
+            <div className="absolute transform rotate-45 bg-amber-400 text-zinc-950 font-black text-[10px] uppercase tracking-wider py-1.5 right-[-38px] top-[32px] w-[150px] text-center shadow-lg">
+              Preço da Black Friday
+            </div>
+          </div>
+
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-brand-red border border-brand-red text-white text-xs font-extrabold uppercase tracking-widest px-5 py-2 rounded-full shadow-lg z-30">
             🔐 Acesso Seguro Garantido
           </div>
 
