@@ -1,8 +1,17 @@
+import { useState, useRef } from 'react';
 import { Volume2 } from 'lucide-react';
+import { motion } from 'motion/react';
 
 export default function VslPlayer() {
-  // Video embed parameters for maximum VSL conversion
-  const embedUrl = "https://www.youtube.com/embed/3mjM0iZF4Lg?autoplay=0&mute=0&rel=0&showinfo=0&controls=1";
+  const [isPlaying, setIsPlaying] = useState(false);
+  const iframeRef = useRef<HTMLIFrameElement>(null);
+
+  const handleStartVideo = () => {
+    setIsPlaying(true);
+  };
+
+  // Video embed parameters hiding YouTube controls, logos, and related videos
+  const activeEmbedUrl = "https://www.youtube.com/embed/3mjM0iZF4Lg?autoplay=1&mute=0&controls=0&modestbranding=1&rel=0&enablejsapi=1&iv_load_policy=3&disablekb=1";
 
   return (
     <div id="vsl-player-container" className="w-full max-w-4xl mx-auto mt-4 md:mt-8 mb-10 md:mb-16 px-2 md:px-4">
@@ -12,14 +21,42 @@ export default function VslPlayer() {
         {/* Video Screen Content */}
         <div className="relative aspect-video w-full rounded-xl overflow-hidden bg-black shadow-inner">
           
-          {/* Active Iframe Embed directly to prevent needing double-clicks */}
-          <iframe
-            className="w-full h-full border-0 absolute inset-0 rounded-xl"
-            src={embedUrl}
-            title="Vídeo de Vendas Ultra Premium"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowFullScreen
-          />
+          {isPlaying ? (
+            <>
+              {/* Active Iframe without controls or YouTube branding */}
+              <iframe
+                ref={iframeRef}
+                className="w-full h-full border-0 absolute inset-0 rounded-xl"
+                src={activeEmbedUrl}
+                title="Vídeo de Vendas Ultra Premium"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+              {/* Shield on top/bottom edges to block YouTube title/logo links */}
+              <div className="absolute top-0 left-0 right-0 h-14 pointer-events-none z-10 bg-gradient-to-b from-black/80 via-black/20 to-transparent" />
+            </>
+          ) : (
+            /* Cover / Play with Audio Button Overlay */
+            <div 
+              onClick={handleStartVideo}
+              className="absolute inset-0 w-full h-full bg-gradient-to-br from-zinc-950 via-zinc-900 to-black flex flex-col items-center justify-center cursor-pointer p-4 select-none group/cover"
+            >
+              {/* Glowing CTA Button */}
+              <motion.div 
+                whileHover={{ scale: 1.08 }}
+                whileTap={{ scale: 0.95 }}
+                className="relative z-10 flex flex-col items-center text-center max-w-md px-4"
+              >
+                {/* Pulse ring play icon */}
+                <div className="relative flex items-center justify-center">
+                  <span className="animate-ping absolute inline-flex h-20 w-20 md:h-24 md:w-24 rounded-full bg-brand-green/40 opacity-75" />
+                  <div className="w-16 h-16 md:w-20 md:h-20 bg-gradient-to-tr from-brand-green via-emerald-400 to-emerald-300 rounded-full flex items-center justify-center shadow-[0_0_35px_rgba(16,185,129,0.6)] text-black font-black">
+                    <Volume2 className="w-8 h-8 md:w-10 md:h-10 text-zinc-950 fill-zinc-950/20 translate-x-0.5" />
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+          )}
           
         </div>
 

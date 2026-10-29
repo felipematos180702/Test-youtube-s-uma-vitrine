@@ -13,22 +13,22 @@ export function BlackFridaySeal({ onClick, className = '' }: BlackFridaySealProp
         initial={{ scale: 0.95, opacity: 0 }}
         animate={{ scale: [1, 1.02, 1], opacity: 1 }}
         transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
-        className="relative inline-flex items-center gap-2 sm:gap-3 md:gap-3.5 px-3.5 py-2 sm:px-5 sm:py-2.5 md:px-7 md:py-3.5 rounded-full bg-gradient-to-r from-zinc-950 via-zinc-900 to-black border border-amber-500/50 shadow-[0_0_30px_rgba(245,158,11,0.3)] text-center cursor-pointer group hover:border-amber-400 transition-all max-w-full"
+        className="relative inline-flex items-center gap-2.5 sm:gap-3 md:gap-3.5 px-5 py-3 sm:px-6 sm:py-3.5 md:px-7 md:py-3.5 rounded-2xl md:rounded-full bg-gradient-to-r from-zinc-950 via-zinc-900 to-black border border-amber-500/50 shadow-[0_0_30px_rgba(245,158,11,0.3)] text-center cursor-pointer group hover:border-amber-400 transition-all max-w-full"
         onClick={onClick}
       >
         {/* Glowing dot effect */}
-        <span className="relative flex h-2.5 w-2.5 sm:h-3 sm:w-3 shrink-0">
+        <span className="relative flex h-3 w-3 sm:h-3.5 sm:w-3.5 shrink-0">
           <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
-          <span className="relative inline-flex rounded-full h-2.5 w-2.5 sm:h-3 sm:w-3 bg-amber-500"></span>
+          <span className="relative inline-flex rounded-full h-3 w-3 sm:h-3.5 sm:w-3.5 bg-amber-500"></span>
         </span>
 
         {/* Badge Title */}
-        <div className="flex items-center gap-2 md:gap-3 whitespace-nowrap">
-          <span className="bg-gradient-to-r from-amber-400 via-amber-300 to-yellow-500 text-black text-[10px] sm:text-xs md:text-sm font-black uppercase px-2.5 sm:px-3 py-0.5 sm:py-1 rounded font-display tracking-wider shadow-sm shrink-0">
+        <div className="flex flex-col md:flex-row items-center gap-1.5 md:gap-3">
+          <span className="bg-gradient-to-r from-amber-400 via-amber-300 to-yellow-500 text-black text-[11px] sm:text-xs md:text-sm font-black uppercase px-3 py-1 rounded font-display tracking-wider shadow-sm shrink-0 whitespace-nowrap">
             APROVEITE A BLACK FRIDAY
           </span>
-          <span className="text-white text-[11px] sm:text-sm md:text-base font-black font-display tracking-tight sm:tracking-wider md:tracking-widest uppercase inline-flex items-center gap-1.5 whitespace-nowrap">
-            <span className="text-amber-400 font-extrabold whitespace-nowrap">• DESCONTO LIBERADO</span>
+          <span className="text-amber-400 text-xs sm:text-sm md:text-base font-black font-display tracking-tight sm:tracking-wider md:tracking-widest uppercase whitespace-nowrap">
+            <span className="hidden md:inline">• </span>DESCONTO LIBERADO
           </span>
         </div>
       </motion.div>

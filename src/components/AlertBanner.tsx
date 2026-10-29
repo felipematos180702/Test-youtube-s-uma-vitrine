@@ -1,4 +1,4 @@
-import { AlertCircle } from 'lucide-react';
+import { AlertCircle, Youtube } from 'lucide-react';
 
 export default function AlertBanner() {
   return (
@@ -13,9 +13,10 @@ export default function AlertBanner() {
 
         <span className="hidden sm:inline-block text-zinc-300">•</span>
 
-        {/* Center: Copy message - Oculto no mobile, visível a partir de sm */}
-        <div className="hidden sm:block text-zinc-800 font-bold leading-tight text-[11px] md:text-sm">
-          Descubra o Segredo para faturar no piloto automático sem estoque
+        {/* Center: Copy message */}
+        <div className="hidden sm:flex items-center gap-1.5 text-zinc-800 font-bold leading-tight text-[11px] md:text-sm">
+          <Youtube className="w-4 h-4 text-[#FF0000] fill-[#FF0000] shrink-0" />
+          <span>YouTube é só uma vitrine: Descubra como faturar no piloto automático sem estoque</span>
         </div>
         
       </div>
