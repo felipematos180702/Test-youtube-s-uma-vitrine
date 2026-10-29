@@ -58,17 +58,26 @@ export function BlackFridayMarquee() {
   return (
     <div className="relative w-full overflow-hidden border-y-2 border-amber-500/35 bg-gradient-to-r from-zinc-950 via-black to-zinc-950 py-4 md:py-6 my-4 md:my-6 shadow-[0_0_25px_rgba(245,158,11,0.12)]">
       {/* Left and Right blur fade masks */}
-      <div className="absolute left-0 top-0 bottom-0 w-12 md:w-28 bg-gradient-to-r from-black via-black/80 to-transparent z-10 pointer-events-none" />
-      <div className="absolute right-0 top-0 bottom-0 w-12 md:w-28 bg-gradient-to-l from-black via-black/80 to-transparent z-10 pointer-events-none" />
+      <div className="absolute left-0 top-0 bottom-0 w-8 md:w-20 bg-gradient-to-r from-black via-black/80 to-transparent z-10 pointer-events-none" />
+      <div className="absolute right-0 top-0 bottom-0 w-8 md:w-20 bg-gradient-to-l from-black via-black/80 to-transparent z-10 pointer-events-none" />
 
       {/* Continuous Marquee Track */}
-      <div className="flex gap-6 md:gap-10 whitespace-nowrap will-change-transform items-center animate-marquee-fast">
+      <motion.div
+        className="flex w-max whitespace-nowrap will-change-transform items-center gap-6 md:gap-10"
+        animate={{ x: ['0%', '-50%'] }}
+        transition={{
+          repeat: Infinity,
+          repeatType: 'loop',
+          ease: 'linear',
+          duration: 10,
+        }}
+      >
         {duplicatedItems.map((item, idx) => {
           const Icon = item.icon;
           return (
             <div
               key={idx}
-              className="inline-flex items-center gap-2 md:gap-3 text-sm md:text-base lg:text-lg font-display font-black tracking-wider uppercase select-none"
+              className="inline-flex items-center gap-2 md:gap-3 text-sm md:text-base lg:text-lg font-display font-black tracking-wider uppercase select-none shrink-0"
             >
               {Icon && (
                 <Icon
@@ -90,7 +99,7 @@ export function BlackFridayMarquee() {
             </div>
           );
         })}
-      </div>
+      </motion.div>
     </div>
   );
 }
