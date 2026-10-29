@@ -53,7 +53,7 @@ export function BlackFridayMarquee() {
     { text: 'VAGAS LIMITADAS', icon: Flame, highlight: true },
   ];
 
-  const duplicatedItems = [...marqueeItems, ...marqueeItems, ...marqueeItems];
+  const duplicatedItems = [...marqueeItems, ...marqueeItems];
 
   return (
     <div className="relative w-full overflow-hidden border-y-2 border-amber-500/35 bg-gradient-to-r from-zinc-950 via-black to-zinc-950 py-4 md:py-6 my-4 md:my-6 shadow-[0_0_25px_rgba(245,158,11,0.12)]">
@@ -62,16 +62,7 @@ export function BlackFridayMarquee() {
       <div className="absolute right-0 top-0 bottom-0 w-12 md:w-28 bg-gradient-to-l from-black via-black/80 to-transparent z-10 pointer-events-none" />
 
       {/* Continuous Marquee Track */}
-      <motion.div
-        className="flex gap-6 md:gap-10 whitespace-nowrap will-change-transform items-center"
-        animate={{ x: ['0%', '-50%'] }}
-        transition={{
-          repeat: Infinity,
-          repeatType: 'loop',
-          ease: 'linear',
-          duration: 12,
-        }}
-      >
+      <div className="flex gap-6 md:gap-10 whitespace-nowrap will-change-transform items-center animate-marquee-fast">
         {duplicatedItems.map((item, idx) => {
           const Icon = item.icon;
           return (
@@ -99,7 +90,7 @@ export function BlackFridayMarquee() {
             </div>
           );
         })}
-      </motion.div>
+      </div>
     </div>
   );
 }

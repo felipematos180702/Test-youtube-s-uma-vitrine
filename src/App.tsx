@@ -7,7 +7,8 @@ import SpecialBonuses from './components/SpecialBonuses';
 import TestimonialsCarousel from './components/TestimonialsCarousel';
 import FaqSection from './components/FaqSection';
 import LiveSalesNotifications from './components/LiveSalesNotifications';
-import { BlackFridaySeal, BlackFridayMarquee } from './components/BlackFridayHeroHighlight';
+import { BlackFridaySeal } from './components/BlackFridayHeroHighlight';
+import HeroMarquee from './components/HeroMarquee';
 import Footer from './components/Footer';
 
 import { 
@@ -78,6 +79,7 @@ export default function App() {
         <h1 className="text-[26px] sm:text-[26px] md:text-5xl lg:text-6xl font-black font-display tracking-tight leading-[1.15] md:leading-[1.1] max-w-4xl mx-auto text-white uppercase mb-4">
           Visualização <span className="text-brand-red underline decoration-brand-red/30 underline-offset-4">Não Dá Dinheiro</span>: Vendas sim!
         </h1>
+        <HeroMarquee />
       </header>
 
       {/* Centralized VSL Video Player Module */}
@@ -124,10 +126,7 @@ export default function App() {
         </div>
       </div>
 
-      {/* Carrossel Infinito com o nome Black Friday passando (Abaixo da seção Hero) */}
-      <div className="mb-10 md:mb-16">
-        <BlackFridayMarquee />
-      </div>
+
 
       {/* The 5 Pillars Bento Section */}
       <PillarsSection />

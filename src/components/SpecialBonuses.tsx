@@ -52,10 +52,16 @@ export default function SpecialBonuses() {
       <div className="absolute bottom-10 right-10 w-[300px] h-[300px] bg-emerald-600/5 rounded-full filter blur-[100px] pointer-events-none" />
 
       <div className="max-w-5xl mx-auto text-center mb-16 relative z-10">
-        <span className="bg-gradient-to-r from-amber-500/20 via-emerald-500/20 to-amber-500/20 border border-amber-500/40 text-amber-300 text-[10px] md:text-xs font-black uppercase tracking-widest px-4 py-1.5 rounded-full inline-flex items-center gap-1.5 mb-4">
-          <Gift className="w-4 h-4 text-emerald-400 animate-bounce" />
-          Bônus Inclusos na Black Friday • R$ 1.191,00 Grátis Hoje
-        </span>
+        <div className="bg-gradient-to-r from-amber-500/20 via-emerald-500/20 to-amber-500/20 border border-amber-500/40 text-amber-300 text-[10px] md:text-xs font-black uppercase tracking-widest px-4 py-2.5 rounded-2xl md:rounded-full inline-flex flex-col md:flex-row items-center justify-center gap-1 md:gap-2 mb-4 text-center">
+          <span className="flex items-center gap-1.5 justify-center">
+            <Gift className="w-4 h-4 text-emerald-400 animate-bounce shrink-0" />
+            Bônus Inclusos na Black Friday
+          </span>
+          <span className="hidden md:inline opacity-60">•</span>
+          <span className="text-emerald-300 font-extrabold text-center block">
+            R$ 1.191,00 Grátis Hoje
+          </span>
+        </div>
         <h2 className="text-3xl md:text-5xl font-black font-display text-white tracking-tight leading-none">
           Bônus Exclusivos <span className="text-emerald-400 bg-clip-text">Inclusos na Sua Inscrição</span> Hoje
         </h2>
