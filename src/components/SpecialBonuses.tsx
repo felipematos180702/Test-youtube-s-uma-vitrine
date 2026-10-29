@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { Gift, Users, Award, ShieldAlert, Sparkles } from 'lucide-react';
+import { Gift, Users, Award, ShieldAlert, Sparkles, CheckCircle2, Flame } from 'lucide-react';
 
 interface BonusCardProps {
   index: number;
@@ -20,7 +20,7 @@ const bonuses: BonusCardProps[] = [
     subtitle: "Networking de Elite & Apoio Continuo",
     description: "Esqueça a solidão de tentar vender na internet sozinho. Destrave acesso direto ao nosso canal exclusivo com mentores experientes e tire dúvidas instantaneamente enquanto interage com centenas de afiliados focados em comissões.",
     value: "R$ 297,00",
-    highlights: ["Suporte contínuo", "Network direto de vendas", "Aulas secretas inclusas"]
+    highlights: ["Suporte contínuo com especialistas", "Networking direto de vendas", "Aulas secretas inclusas"]
   },
   {
     index: 2,
@@ -29,7 +29,7 @@ const bonuses: BonusCardProps[] = [
     subtitle: "Acelerando seu Faturamento de Forma Massiva",
     description: "Descubra como colocar anúncios de alta conversão para trabalhar por você de modo cirúrgico. Saiba exatamente qual criativo usar, quanto investir no Facebook / Google Ads e colha cliques altamente compradores sem depender de dancinhas.",
     value: "R$ 397,00",
-    highlights: ["Estruturas de anúncios copiáveis", "Orçamento mínimo de teste", "Alimentação de funil"]
+    highlights: ["Estruturas de anúncios copiáveis", "Orçamento mínimo de teste", "Alimentação de funil automático"]
   },
   {
     index: 3,
@@ -39,7 +39,7 @@ const bonuses: BonusCardProps[] = [
     isSpecial: true,
     description: "Este é o verdadeiro segrego guardado a sete chaves pelos milionários do mercado de afiliados. Aprenda estratégias agressivas, lógicas de tráfego ultra lucrativas que fogem de qualquer complicação convencional para multiplicar seus retornos em tempo recorde.",
     value: "R$ 497,00",
-    highlights: ["Estruturas de arbitragem", "Conversões exponenciais", "Escudo anti-bloqueio"]
+    highlights: ["Estruturas de arbitragem avançada", "Conversões exponenciais", "Escudo anti-bloqueio"]
   }
 ];
 
@@ -53,7 +53,7 @@ export default function SpecialBonuses() {
 
       <div className="max-w-5xl mx-auto text-center mb-16 relative z-10">
         <span className="bg-gradient-to-r from-amber-500/20 via-emerald-500/20 to-amber-500/20 border border-amber-500/40 text-amber-300 text-[10px] md:text-xs font-black uppercase tracking-widest px-4 py-1.5 rounded-full inline-flex items-center gap-1.5 mb-4">
-          <Gift className="w-4 h-4 text-amber-400 animate-bounce" />
+          <Gift className="w-4 h-4 text-emerald-400 animate-bounce" />
           Bônus Inclusos na Black Friday • R$ 1.191,00 Grátis Hoje
         </span>
         <h2 className="text-3xl md:text-5xl font-black font-display text-white tracking-tight leading-none">
@@ -83,10 +83,9 @@ export default function SpecialBonuses() {
               viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 0.5, ease: "easeOut", delay: bonus.index * 0.12 }}
               whileHover={{ y: -6, transition: { duration: 0.2 } }}
-              // Custom borders styling based on normal/secret bonus type
               className={`p-6 md:p-8 rounded-3xl bg-[#0F0F11] border flex flex-col justify-between transition-all duration-300 relative overflow-hidden ring-1 ${
                 bonus.isSpecial 
-                  ? 'border-emerald-500/60 ring-emerald-500/20 shadow-[0_15px_40px_rgba(16,185,129,0.18)] border-2 animate-pulse-subtle' 
+                  ? 'border-emerald-500/60 ring-emerald-500/20 shadow-[0_15px_40px_rgba(16,185,129,0.18)] border-2' 
                   : 'border-emerald-600/30 ring-emerald-600/10 shadow-[0_15px_30px_rgba(16,185,129,0.06)]'
               }`}
             >
@@ -105,43 +104,45 @@ export default function SpecialBonuses() {
 
               {/* Header Info */}
               <div className="relative pr-16">
-                <span className="text-[10px] font-mono uppercase tracking-widest text-zinc-500 block mb-2">
-                  BÔNUS #{bonus.index}
+                <span className="text-[10px] font-mono uppercase tracking-widest text-emerald-400 font-bold block mb-2">
+                  BÔNUS EXCLUSIVO #{bonus.index}
                 </span>
                 <h3 className="text-lg md:text-xl font-extrabold font-display leading-tight tracking-tight text-white">
                   {bonus.title}
                 </h3>
                 {bonus.subtitle && (
-                  <p className="text-zinc-500 text-xs mt-1.5 font-semibold font-mono block">
+                  <p className="text-zinc-400 text-xs mt-1.5 font-semibold font-mono block">
                     {bonus.subtitle}
                   </p>
                 )}
               </div>
 
-              {/* Bottom footer values display */}
-              <div className={`mt-8 pt-4 border-t border-white/5 flex items-center justify-between`}>
+
+
+              {/* Bottom footer values display with Stacking Callout */}
+              <div className="pt-4 border-t border-white/5 flex items-center justify-between">
                 <div>
-                  <span className="text-[10px] text-zinc-600 line-through block leading-none">
-                    Valor Regular: {bonus.value}
+                  <span className="text-[11px] text-zinc-500 line-through block leading-none">
+                    Vendido por: {bonus.value}
                   </span>
-                  <span className="text-xs font-bold text-emerald-400 uppercase tracking-widest block mt-1">
-                    GRÁTIS HOJE
-                  </span>
+                  <div className="flex items-center gap-1 mt-1">
+                    <span className="text-xs font-black text-emerald-400 uppercase tracking-widest">
+                      100% GRÁTIS
+                    </span>
+
+                  </div>
                 </div>
 
-                <div className={`p-2 rounded-xl bg-zinc-900 border text-zinc-500 ${
-                  bonus.isSpecial ? 'border-emerald-500/20 text-emerald-400/80' : 'border-emerald-600/20 text-emerald-500/80'
+                <div className={`p-2.5 rounded-xl bg-zinc-900 border text-zinc-400 ${
+                  bonus.isSpecial ? 'border-emerald-500/30 text-emerald-400' : 'border-emerald-600/30 text-emerald-400'
                 }`}>
-                  {bonus.isSpecial ? <ShieldAlert className="w-5 h-5 animate-bounce" /> : <Award className="w-5 h-5" />}
+                  {bonus.isSpecial ? <ShieldAlert className="w-5 h-5 text-emerald-400" /> : <Award className="w-5 h-5" />}
                 </div>
               </div>
             </motion.div>
           );
         })}
       </div>
-
-      {/* Simulated Urgent Counter/CTA Footer line to pump conversion removed as requested */}
-
     </section>
   );
 }

@@ -159,31 +159,43 @@ export default function App() {
           </h3>
 
           <div className="mt-8 flex flex-col items-center justify-center gap-1">
-            <span className="text-zinc-500 text-sm line-through">De R$ 2.497,00 por apenas</span>
+            <span className="text-zinc-500 text-sm line-through">De R$ 1.570,00 por apenas</span>
             <div className="flex items-baseline gap-1.5 text-brand-green">
               <span className="text-lg md:text-xl font-bold">12x de</span>
-              <span className="text-5xl md:text-6xl font-black font-display tracking-tight">R$ 162,37</span>
+              <span className="text-5xl md:text-6xl font-black font-display tracking-tight">R$ 50,37</span>
             </div>
-            <span className="text-zinc-400 font-bold block mt-2 text-sm md:text-base">ou R$ 1.570 à vista</span>
+            <span className="text-zinc-400 font-bold block mt-2 text-sm md:text-base">ou R$ 487,00 à vista</span>
           </div>
 
-          {/* Core inclusions lines */}
-          <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-xl mx-auto text-left border-y border-white/5 py-6">
+          {/* Core inclusions and bonuses lines */}
+          <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-3.5 max-w-xl mx-auto text-left border-y border-white/5 py-6">
             <div className="flex items-center gap-2.5 text-zinc-300 text-sm">
               <Check className="w-4 h-4 text-brand-green shrink-0 bg-brand-green/10 rounded-full p-0.5" />
-              <span>Grupo de suporte</span>
+              <span>Método Completo Vitrine Automática</span>
             </div>
             <div className="flex items-center gap-2.5 text-zinc-300 text-sm">
               <Check className="w-4 h-4 text-brand-green shrink-0 bg-brand-green/10 rounded-full p-0.5" />
-              <span>Aulas de tráfego pago</span>
+              <span>Garantia incondicional de 7 dias</span>
             </div>
             <div className="flex items-center gap-2.5 text-zinc-300 text-sm">
               <Check className="w-4 h-4 text-brand-green shrink-0 bg-brand-green/10 rounded-full p-0.5" />
-              <span>Estratégias de tráfego</span>
+              <span>Estratégias de tráfego e conversão</span>
             </div>
             <div className="flex items-center gap-2.5 text-zinc-300 text-sm">
               <Check className="w-4 h-4 text-brand-green shrink-0 bg-brand-green/10 rounded-full p-0.5" />
-              <span>Garantia de 7 dias</span>
+              <span>Acesso imediato por 1 ano</span>
+            </div>
+            <div className="flex items-center gap-2.5 text-zinc-300 text-sm">
+              <Gift className="w-4 h-4 text-brand-green shrink-0 bg-brand-green/10 rounded-full p-0.5" />
+              <span><strong className="text-white font-semibold">Bônus 1:</strong> Grupo de suporte VIP</span>
+            </div>
+            <div className="flex items-center gap-2.5 text-zinc-300 text-sm">
+              <Gift className="w-4 h-4 text-brand-green shrink-0 bg-brand-green/10 rounded-full p-0.5" />
+              <span><strong className="text-white font-semibold">Bônus 2:</strong> Aulas de tráfego pago</span>
+            </div>
+            <div className="flex items-center gap-2.5 text-zinc-300 text-sm sm:col-span-2">
+              <Gift className="w-4 h-4 text-brand-green shrink-0 bg-brand-green/10 rounded-full p-0.5" />
+              <span><strong className="text-white font-semibold">Bônus 3:</strong> Tráfego pago proibido</span>
             </div>
           </div>
 
@@ -211,7 +223,7 @@ export default function App() {
       <section className="bg-gradient-to-r from-black via-zinc-900 to-black border-y border-white/5 py-12 px-6 text-center max-w-4xl mx-auto rounded-3xl mt-12 mb-6">
         <h3 className="text-xl md:text-2xl font-black font-display text-white">⚠️ ATENÇÃO: AS VAGAS ESTÃO SE ESGOTANDO</h3>
         <p className="text-zinc-400 text-xs md:text-sm mt-3 leading-relaxed max-w-2xl mx-auto">
-          As vagas para esta turma com acesso ao preço promocional de lançamento de apenas <strong>12x de R$ 162,37 ou R$ 1.570 à vista</strong> estão se esgotando rapidamente. Garanta sua vaga com o desconto vitalício agora ou pague o valor cheio de R$ 2.497,00 amanhã.
+          As vagas para esta turma com acesso ao preço promocional de lançamento de apenas <strong>12x de R$ 50,37 ou R$ 487,00 à vista</strong> estão se esgotando rapidamente. Garanta sua vaga com o desconto vitalício agora ou pague o valor cheio de R$ 1.570,00 amanhã.
         </p>
       </section>
 

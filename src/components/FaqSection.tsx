@@ -69,25 +69,6 @@ export default function FaqSection() {
         })}
       </div>
 
-      {/* Guarantee Badge embedded right next to FAQ */}
-      <div className="mt-12 p-6 md:p-8 rounded-2xl bg-gradient-to-tr from-brand-green/5 to-brand-green/20 border border-brand-green/20 flex flex-col md:flex-row items-center gap-6 justify-between">
-        <div className="flex items-center gap-4">
-          <div className="w-16 h-16 rounded-full bg-brand-green/15 flex items-center justify-center shrink-0 border border-brand-green/30">
-            {/* Stamp visual symbol */}
-            <span className="font-serif text-3xl font-black text-brand-green select-none">7</span>
-          </div>
-          <div>
-            <h3 className="font-bold text-lg text-white font-display">Garantia Blindada Incondicional</h3>
-            <p className="text-zinc-400 text-xs font-light mt-1 max-w-md leading-relaxed">
-              Você tem 7 dias inteiros para testar e aplicar os 5 pilares do método. Se não fizer sua primeira venda ou não amar, reembolsamos 100% sem burocracias.
-            </p>
-          </div>
-        </div>
-        <div className="text-zinc-500 font-mono text-[10px] border border-white/10 px-3 py-1.5 rounded-lg uppercase tracking-wider backdrop-blur-sm">
-          Compra 100% Segura
-        </div>
-      </div>
-
     </section>
   );
 }
