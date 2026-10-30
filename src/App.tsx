@@ -108,7 +108,7 @@ export default function App() {
         >
           {/* Flame element */}
           <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/10 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
-          QUERO TRANSFORMAR MINHAS REDES SOCIAIS EM UMA VITRINE LUCRATIVA
+          QUERO GARANTIR O MEU ACESSO COM DESCONTO DE BLACK FRIDAY
           <ChevronRight className="w-5 h-5 md:w-6 md:h-6 shrink-0 group-hover:translate-x-1.5 transition-transform" />
         </motion.button>
         
@@ -228,7 +228,12 @@ export default function App() {
             </motion.button>
           </div>
 
-          <div className="mt-4 text-zinc-500 text-[10px] md:text-xs">
+          {/* Highlighted Black Friday Urgency Warning */}
+          <div className="mt-4 py-2 px-3 sm:px-4 rounded-xl bg-amber-500/10 border border-amber-500/30 text-amber-400 font-extrabold text-xs sm:text-sm md:text-base tracking-tight shadow-[0_0_15px_rgba(245,158,11,0.15)] animate-pulse">
+            ⚠️ ATENÇÃO: Desconto de Black Friday válido apenas enquanto durar o período.
+          </div>
+
+          <div className="mt-3 text-zinc-500 text-[10px] md:text-xs">
             ⚠️ Atenção: Seus dados estão absolutamente seguros. Ambiente de pagamento processado de forma criptografada.
           </div>
 
